@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Criar música · Bonde do Tigrinho</title>
+  <link rel="icon" href="img/tigrinho.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+  <section class="tela ativa">
+    <header class="topo">
+      <img src="img/tigrinho.svg" alt="" class="logo">
+      <div>
+        <h1>Criar arquivo .tigrinho</h1>
+        <p class="sub">Preencha, confira e baixe. Depois envie pelo FileZilla para a pasta <code>musicas/</code>.</p>
+      </div>
+      <a class="botao fantasma" href="index.html">← Voltar ao jogo</a>
+    </header>
+
+    <div class="criador">
+      <form id="formulario" autocomplete="off">
+        <label>Nome da música <input id="campoTitulo" required placeholder="Heroes Tonight"></label>
+        <label>Artista <input id="campoArtista" required placeholder="Janji"></label>
+        <label>Link do clipe no YouTube <input id="campoYoutube" required placeholder="https://www.youtube.com/watch?v=…"></label>
+        <div class="preview" id="previewVideo" aria-label="Capa do vídeo"></div>
+        <div class="linha">
+          <label>Dificuldade
+            <select id="campoDificuldade">
+              <option value="facil">Fácil (pose a cada 8 batidas)</option>
+              <option value="medio" selected>Médio (a cada 4)</option>
+              <option value="dificil">Difícil (a cada 2)</option>
+            </select>
+          </label>
+          <label>BPM (batidas por minuto) <input id="campoBpm" type="number" min="40" max="220" value="120"></label>
+        </div>
+        <button type="button" class="botao fantasma" id="botaoBatida">Toque aqui no ritmo da música (marca o BPM)</button>
+        <div class="linha">
+          <label>Começa no segundo <input id="campoInicio" type="number" min="0" value="0"></label>
+          <label>Termina no segundo <input id="campoFim" type="number" min="10" value="90"></label>
+        </div>
+        <div class="linha">
+          <label>Cor do cartão <input id="campoCor" type="color" value="#ff8c42"></label>
+          <label>Enviado por <input id="campoAutor" placeholder="Grupo 3 · 3º DS"></label>
+        </div>
+      </form>
+
+      <div class="saida">
+        <label for="saidaJson">Conteúdo do arquivo (você também pode colar um .tigrinho aqui para conferir)</label>
+        <textarea id="saidaJson" spellcheck="false"></textarea>
+        <div id="status" class="status"></div>
+        <label>Nome do arquivo <input id="campoArquivo" readonly></label>
+        <div class="acoes" style="justify-content:flex-start">
+          <button class="botao" id="botaoBaixar">Baixar arquivo</button>
+          <button class="botao fantasma" id="botaoCopiar">Copiar texto</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/configuracao.js"></script>
+  <script src="js/musicas.js"></script>
+  <script src="js/criador.js"></script>
+</body>
+</html>

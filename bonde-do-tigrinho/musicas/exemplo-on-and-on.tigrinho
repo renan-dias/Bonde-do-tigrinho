@@ -1,0 +1,27 @@
+{
+  "formato": "tigrinho/1",
+  "titulo": "On & On",
+  "artista": "Cartoon, Jéja feat. Daniel Levi (NCS)",
+  "youtube": "https://www.youtube.com/watch?v=K4DyBUG242c",
+  "bpm": 87,
+  "dificuldade": "dificil",
+  "inicio": 0,
+  "fim": 80,
+  "cor": "#a184ff",
+  "enviadoPor": "Prof. Renan",
+  "coreografia": [
+    { "tempo": 4,  "pose": "t_pose" },
+    { "tempo": 7,  "pose": "bracos_cima" },
+    { "tempo": 10, "pose": "direita_cima" },
+    { "tempo": 13, "pose": "esquerda_cima" },
+    { "tempo": 16, "pose": "agachado" },
+    { "tempo": 19, "pose": "t_pose" },
+    { "tempo": 22, "pose": "bracos_cima" },
+    { "tempo": 25, "pose": "agachado" },
+    { "tempo": 28, "pose": "direita_cima" },
+    { "tempo": 31, "pose": "esquerda_cima" },
+    { "tempo": 34, "pose": "t_pose" },
+    { "tempo": 37, "pose": "bracos_cima" },
+    { "tempo": 40, "pose": "agachado" }
+  ]
+}

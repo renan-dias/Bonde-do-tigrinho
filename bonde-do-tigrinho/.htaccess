@@ -1,0 +1,16 @@
+# Bonde do Tigrinho · configuração do Apache (HostGator)
+
+# Nossa extensão própria é JSON por dentro: avisa o navegador.
+AddType application/json .tigrinho
+AddDefaultCharset UTF-8
+AddCharset UTF-8 .tigrinho .js .css .json
+
+# Ninguém precisa ver a lista crua das pastas.
+Options -Indexes
+
+# Músicas novas aparecem na hora (sem cache).
+<IfModule mod_headers.c>
+  <FilesMatch "\.(tigrinho|json)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>

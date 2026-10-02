@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bonde do Tigrinho · O Jogo</title>
+  <link rel="icon" href="img/tigrinho.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <!-- ============ TELA 1 · MENU ============ -->
+  <section id="telaMenu" class="tela ativa">
+    <header class="topo">
+      <img src="img/tigrinho.svg" alt="" class="logo">
+      <div>
+        <h1 id="tituloDoApp">Bonde do Tigrinho</h1>
+        <p class="sub">O jogo de dança feito com Teachable Machine · Matemática Discreta</p>
+      </div>
+      <a class="botao fantasma" href="criar.html">+ Criar música</a>
+    </header>
+
+    <div class="aviso" id="avisoDetector"></div>
+
+    <h2 class="secao">Escolha a música</h2>
+    <p class="dica">Cada cartão é um arquivo <code>.tigrinho</code> dentro da pasta <code>musicas/</code>.</p>
+    <div id="listaDeMusicas" class="grade-musicas">
+      <p class="carregando">Procurando músicas…</p>
+    </div>
+  </section>
+
+  <!-- ============ TELA 2 · JOGO ============ -->
+  <section id="telaJogo" class="tela">
+    <div class="palco">
+      <div class="video-caixa">
+        <div id="encaixeDoVideo"><div id="playerYoutube"></div></div>
+        <button id="botaoTocar" class="botao grande" hidden>▶ Tocar música</button>
+      </div>
+
+      <aside class="lateral">
+        <div class="placar">
+          <div><span class="rotulo">Pontos</span><strong id="pontos">0</strong></div>
+          <div><span class="rotulo">Combo</span><strong id="combo">0</strong></div>
+        </div>
+        <div id="areaDaCamera" class="camera"></div>
+        <div class="leitura">
+          <span class="rotulo">Você está fazendo</span>
+          <strong id="poseLida">—</strong>
+        </div>
+        <button id="botaoSair" class="botao fantasma">✕ Sair</button>
+      </aside>
+    </div>
+
+    <div class="esteira">
+      <div class="alvo"><span>AGORA</span></div>
+      <div id="trilha" class="trilha"></div>
+      <div id="medidor" class="medidor"><i></i></div>
+    </div>
+
+    <div id="nota" class="nota"></div>
+    <div id="mensagem" class="mensagem" hidden></div>
+  </section>
+
+  <!-- ============ TELA 3 · RESULTADO ============ -->
+  <section id="telaResultado" class="tela">
+    <div class="resultado">
+      <img src="img/tigrinho.svg" alt="" class="logo grande">
+      <h2 id="resultadoTitulo">Fim!</h2>
+      <p id="resultadoMusica" class="sub"></p>
+      <div class="estrelas" id="estrelas"></div>
+      <div class="total"><span id="resultadoPontos">0</span> pontos</div>
+      <ul id="resultadoNotas" class="notas"></ul>
+      <div class="acoes">
+        <button id="botaoDeNovo" class="botao">Dançar de novo</button>
+        <button id="botaoMenu" class="botao fantasma">Escolher outra música</button>
+      </div>
+    </div>
+  </section>
+
+  <!--
+    PARTE AO VIVO (Teachable Machine):
+    quando o detector.js passar a usar a câmera, descomente as duas linhas abaixo.
+    Elas carregam o TensorFlow.js e a biblioteca de POSE do Teachable Machine.
+  -->
+  <!--
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/pose@0.8/dist/teachablemachine-pose.min.js"></script>
+  -->
+
+  <!-- A ordem importa: quem é usado vem antes de quem usa. -->
+  <script src="js/configuracao.js"></script>
+  <script src="js/pictogramas.js"></script>
+  <script src="js/musicas.js"></script>
+  <script src="js/coreografia.js"></script>
+  <script src="js/youtube.js"></script>
+  <script src="js/detector.js"></script>
+  <script src="js/interface.js"></script>
+  <script src="js/jogo.js"></script>
+  <script src="js/principal.js"></script>
+</body>
+</html>
